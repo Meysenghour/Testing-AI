@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Official Phnom Penh Post social media hub. Follow us on Facebook, YouTube, Telegram, TikTok, Instagram, X, and our website."
+    />
+    <meta name="theme-color" content="#a30000" />
+    <meta property="og:title" content="Phnom Penh Post | Official Social Media Channels" />
+    <meta
+      property="og:description"
+      content="One place to access all official Phnom Penh Post social channels."
+    />
+    <meta property="og:type" content="website" />
+    <title>Phnom Penh Post | Social Share Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <main id="main-content" class="page-wrap" aria-label="Phnom Penh Post social media links">
+      <section class="hub-card" aria-labelledby="hub-title">
+        <header class="hub-header">
+          <div class="brand-wrap">
+            <div class="logo" aria-hidden="true">PPP</div>
+            <div>
+              <p class="brand-name">Phnom Penh Post</p>
+              <h1 id="hub-title">Official Social Media Channels</h1>
+            </div>
+          </div>
+          <div class="actions-inline">
+            <button id="theme-toggle" class="ghost-button" type="button" aria-label="Toggle dark mode">
+              <span aria-hidden="true">◐</span>
+              <span>Theme</span>
+            </button>
+          </div>
+        </header>
+
+        <section class="social-grid" id="social-grid" aria-label="Social media links"></section>
+
+        <section class="utility-panel" aria-label="Sharing and quick access tools">
+          <div class="share-controls">
+            <button id="share-button" class="primary-button" type="button">Share this page</button>
+            <button id="copy-link-button" class="secondary-button" type="button">Copy page link</button>
+          </div>
+          <p id="share-status" class="status-message" role="status" aria-live="polite"></p>
+
+          <div class="qr-wrap">
+            <p class="qr-label">Scan to open this page</p>
+            <img id="qr-code" width="140" height="140" alt="QR code to this page" loading="lazy" />
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Phnom Penh Post. All rights reserved.</p>
+      <p class="analytics-note">Analytics placeholder: Google Analytics script can be inserted before <code>&lt;/body&gt;</code>.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
