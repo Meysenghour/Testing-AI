@@ -57,9 +57,8 @@ const ICONS = {
 
 function createSocialButtons() {
   const grid = document.getElementById('social-grid');
-  const entries = Object.values(SOCIAL_LINKS);
 
-  entries.forEach((item) => {
+  Object.values(SOCIAL_LINKS).forEach((item) => {
     const anchor = document.createElement('a');
     anchor.className = 'social-button';
     anchor.href = item.url;
@@ -82,10 +81,8 @@ function createSocialButtons() {
 }
 
 async function copyPageLink(statusElement) {
-  const url = window.location.href;
-
   try {
-    await navigator.clipboard.writeText(url);
+    await navigator.clipboard.writeText(window.location.href);
     statusElement.textContent = 'Page link copied to clipboard.';
   } catch {
     statusElement.textContent = 'Could not access clipboard. Please copy the URL manually.';
@@ -135,12 +132,6 @@ function initDarkMode() {
   });
 }
 
-function initQrCode() {
-  const qrImage = document.getElementById('qr-code');
-  const encoded = encodeURIComponent(window.location.href);
-  qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=${encoded}`;
-}
-
 function initMeta() {
   document.getElementById('year').textContent = new Date().getFullYear();
 }
@@ -148,5 +139,4 @@ function initMeta() {
 createSocialButtons();
 initShareActions();
 initDarkMode();
-initQrCode();
 initMeta();

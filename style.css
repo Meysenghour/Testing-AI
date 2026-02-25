@@ -77,21 +77,38 @@ body {
 
 .brand-wrap {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 0.8rem;
 }
 
 .logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
+  min-width: 165px;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: var(--accent);
   color: #fff;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.logo-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.58rem;
+  opacity: 0.9;
+}
+
+.logo-title {
+  margin: 0.1rem 0 0;
   font-family: 'Merriweather', serif;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  font-size: 1.05rem;
 }
 
 .brand-name {
@@ -142,7 +159,7 @@ h1 {
 .social-button {
   border: 1px solid var(--border);
   background: var(--surface-muted);
-  padding: 0.85rem;
+  padding: 0.8rem;
   width: 100%;
   color: inherit;
   text-align: left;
@@ -150,6 +167,18 @@ h1 {
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent);
 }
 
 .social-button:focus-visible,
@@ -164,6 +193,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  font-weight: 600;
 }
 
 .social-icon {
@@ -207,25 +237,6 @@ h1 {
   font-size: 0.88rem;
 }
 
-.qr-wrap {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  align-items: flex-start;
-}
-
-.qr-wrap img {
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  background: white;
-}
-
-.qr-label {
-  margin: 0;
-  font-size: 0.85rem;
-  color: var(--text-soft);
-}
-
 .site-footer {
   position: sticky;
   bottom: 0;
@@ -252,6 +263,16 @@ h1 {
 
   .share-controls {
     grid-template-columns: repeat(2, max-content);
+  }
+}
+
+@media (max-width: 420px) {
+  .logo {
+    min-width: 140px;
+  }
+
+  .logo-title {
+    font-size: 0.95rem;
   }
 }
 
